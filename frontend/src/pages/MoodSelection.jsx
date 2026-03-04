@@ -4,8 +4,9 @@ import { motion } from 'framer-motion'
 import { 
   FiSmile, FiFrown, FiZap, FiCoffee, 
   FiHeart, FiAlertCircle, FiClock, 
-  FiCompass, FiBrain, FiActivity 
+  FiCompass, FiActivity 
 } from 'react-icons/fi'
+import { FaBrain } from 'react-icons/fa'
 
 const moods = [
   { id: 'happy', label: 'Happy', icon: FiSmile, emoji: '😊' },
@@ -16,7 +17,7 @@ const moods = [
   { id: 'scared', label: 'Scared', icon: FiAlertCircle, emoji: '😱' },
   { id: 'nostalgic', label: 'Nostalgic', icon: FiClock, emoji: '🕰️' },
   { id: 'adventurous', label: 'Adventurous', icon: FiCompass, emoji: '🗺️' },
-  { id: 'thoughtful', label: 'Thoughtful', icon: FiBrain, emoji: '🤔' },
+  { id: 'thoughtful', label: 'Thoughtful', icon: FaBrain, emoji: '🤔' },
   { id: 'energetic', label: 'Energetic', icon: FiActivity, emoji: '⚡' }
 ]
 

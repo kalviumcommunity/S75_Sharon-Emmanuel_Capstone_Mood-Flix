@@ -42,7 +42,7 @@ export const getRecommendations = async (req, res, next) => {
 
     // Build TMDb API params
     const tmdbParams = {
-      api_key: TMDB_API_KEY,
+      api_key: process.env.TMDB_API_KEY,
       with_genres: genres.join(','),
       sort_by: sortBy || 'popularity.desc',
       page: req.query.page || 1
@@ -107,7 +107,7 @@ export const getMovieDetails = async (req, res, next) => {
 
     const response = await axios.get(`${TMDB_BASE_URL}/movie/${id}`, {
       params: {
-        api_key: TMDB_API_KEY
+        api_key: process.env.TMDB_API_KEY
       }
     });
 
@@ -159,7 +159,7 @@ export const searchMovies = async (req, res, next) => {
 
     const response = await axios.get(`${TMDB_BASE_URL}/search/movie`, {
       params: {
-        api_key: TMDB_API_KEY,
+        api_key: process.env.TMDB_API_KEY,
         query,
         page
       }
@@ -196,7 +196,7 @@ export const getPopularMovies = async (req, res, next) => {
   try {
     const response = await axios.get(`${TMDB_BASE_URL}/movie/popular`, {
       params: {
-        api_key: TMDB_API_KEY,
+        api_key: process.env.TMDB_API_KEY,
         page: req.query.page || 1
       }
     });

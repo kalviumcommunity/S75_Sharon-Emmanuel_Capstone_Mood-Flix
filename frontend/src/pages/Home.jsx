@@ -9,20 +9,34 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[70vh] flex items-center text-white overflow-hidden">
+        
+        {/* Background Image */}
+        <img
+          src="/images/image.png"
+          alt="Hero"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Find Movies That Match Your Mood
             </h1>
+
             <p className="text-xl md:text-2xl mb-8 text-primary-100">
               AI-powered recommendations based on how you feel
             </p>
+
             {isAuthenticated ? (
               <Link
                 to="/mood-selection"
@@ -38,15 +52,17 @@ const Home = () => {
                 >
                   Get Started
                 </Link>
+
                 <Link
                   to="/login"
-                  className="inline-block bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-lg"
+                  className="inline-block border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-lg"
                 >
                   Login
                 </Link>
               </div>
             )}
           </motion.div>
+
         </div>
       </section>
 
